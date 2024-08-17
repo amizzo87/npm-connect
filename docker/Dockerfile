@@ -51,7 +51,7 @@ RUN rm -rf /etc/s6-overlay/s6-rc.d/user/contents.d/frontend /etc/nginx/conf.d/de
 	&& chmod 644 /etc/logrotate.d/nginx-proxy-manager
 
 VOLUME [ "/data" ]
-ENTRYPOINT [ "/init" ]
+ENTRYPOINT [ "sh", "-c", "exec /init" ]
 
 LABEL org.label-schema.schema-version="1.0" \
 	org.label-schema.license="MIT" \
